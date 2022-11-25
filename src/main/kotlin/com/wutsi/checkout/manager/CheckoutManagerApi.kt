@@ -5,12 +5,19 @@ import com.wutsi.checkout.manager.dto.AddPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.GetPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodResponse
+import com.wutsi.checkout.manager.dto.SearchPaymentProviderRequest
+import com.wutsi.checkout.manager.dto.SearchPaymentProviderResponse
 import feign.Headers
 import feign.Param
 import feign.RequestLine
 import kotlin.String
 
 public interface CheckoutManagerApi {
+  @RequestLine("POST /v1/payment-providers/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchPaymentProvider(request: SearchPaymentProviderRequest):
+      SearchPaymentProviderResponse
+
   @RequestLine("POST /v1/payment-methods")
   @Headers(value=["Content-Type: application/json"])
   public fun addPaymentMethod(request: AddPaymentMethodRequest): AddPaymentMethodResponse
