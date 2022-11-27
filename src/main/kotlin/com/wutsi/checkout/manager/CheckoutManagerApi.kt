@@ -2,8 +2,6 @@ package com.wutsi.checkout.manager
 
 import com.wutsi.checkout.manager.dto.AddPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.AddPaymentMethodResponse
-import com.wutsi.checkout.manager.dto.CheckoutRequest
-import com.wutsi.checkout.manager.dto.CheckoutResponse
 import com.wutsi.checkout.manager.dto.CreateChargeRequest
 import com.wutsi.checkout.manager.dto.CreateChargeResponse
 import com.wutsi.checkout.manager.dto.CreateOrderRequest
@@ -41,10 +39,6 @@ public interface CheckoutManagerApi {
   @RequestLine("GET /v1/businesses/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getBusiness(@Param("id") id: Long): GetBusinessResponse
-
-  @RequestLine("POST /v1/checkout")
-  @Headers(value=["Content-Type: application/json"])
-  public fun checkout(request: CheckoutRequest): CheckoutResponse
 
   @RequestLine("POST /v1/orders")
   @Headers(value=["Content-Type: application/json"])
