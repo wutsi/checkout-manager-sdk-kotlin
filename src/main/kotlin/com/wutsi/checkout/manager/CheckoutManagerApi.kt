@@ -17,6 +17,7 @@ import com.wutsi.checkout.manager.dto.SearchPaymentProviderResponse
 import feign.Headers
 import feign.Param
 import feign.RequestLine
+import kotlin.Boolean
 import kotlin.Long
 import kotlin.String
 
@@ -54,7 +55,8 @@ public interface CheckoutManagerApi {
   @Headers(value=["Content-Type: application/json"])
   public fun createCharge(request: CreateChargeRequest): CreateChargeResponse
 
-  @RequestLine("GET /v1/transactions/{id}")
+  @RequestLine("GET /v1/transactions/{id}?sync={sync}")
   @Headers(value=["Content-Type: application/json"])
-  public fun getTransaction(@Param("id") id: String): GetTransactionResponse
+  public fun getTransaction(@Param("id") id: String, @Param("sync") sync: Boolean? = null):
+      GetTransactionResponse
 }
