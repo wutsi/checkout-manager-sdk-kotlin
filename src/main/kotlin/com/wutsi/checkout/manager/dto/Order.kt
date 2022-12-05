@@ -1,6 +1,7 @@
 package com.wutsi.checkout.manager.dto
 
 import java.time.OffsetDateTime
+import kotlin.Int
 import kotlin.Long
 import kotlin.String
 import kotlin.collections.List
@@ -32,4 +33,5 @@ public data class Order(
   public val customerEmail: String = "",
   public val items: List<OrderItem> = emptyList(),
   public val discounts: List<Discount> = emptyList(),
+  public val itemCount: Int = 0,
 )

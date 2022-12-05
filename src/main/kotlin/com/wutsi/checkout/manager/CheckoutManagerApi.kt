@@ -10,6 +10,8 @@ import com.wutsi.checkout.manager.dto.GetBusinessResponse
 import com.wutsi.checkout.manager.dto.GetOrderResponse
 import com.wutsi.checkout.manager.dto.GetPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.GetTransactionResponse
+import com.wutsi.checkout.manager.dto.SearchOrderRequest
+import com.wutsi.checkout.manager.dto.SearchOrderResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderRequest
@@ -50,6 +52,10 @@ public interface CheckoutManagerApi {
   @RequestLine("GET /v1/orders/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getOrder(@Param("id") id: String): GetOrderResponse
+
+  @RequestLine("POST /v1/orders/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchOrder(request: SearchOrderRequest): SearchOrderResponse
 
   @RequestLine("POST /v1/transactions/charge")
   @Headers(value=["Content-Type: application/json"])
