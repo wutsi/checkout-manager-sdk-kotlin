@@ -13,5 +13,5 @@ public data class Business(
   public val status: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
-  public val suspended: OffsetDateTime? = null,
+  public val deactivated: OffsetDateTime? = null,
 )
