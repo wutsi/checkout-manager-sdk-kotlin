@@ -22,6 +22,7 @@ import feign.RequestLine
 import kotlin.Boolean
 import kotlin.Long
 import kotlin.String
+import kotlin.Unit
 
 public interface CheckoutManagerApi {
   @RequestLine("POST /v1/payment-providers/search")
@@ -40,6 +41,10 @@ public interface CheckoutManagerApi {
   @RequestLine("GET /v1/payment-methods/{token}")
   @Headers(value=["Content-Type: application/json"])
   public fun getPaymentMethod(@Param("token") token: String): GetPaymentMethodResponse
+
+  @RequestLine("DELETE /v1/payment-methods/{token}")
+  @Headers(value=["Content-Type: application/json"])
+  public fun removePaymentMethod(@Param("token") token: String): Unit
 
   @RequestLine("GET /v1/businesses/{id}")
   @Headers(value=["Content-Type: application/json"])
