@@ -16,6 +16,7 @@ import com.wutsi.checkout.manager.dto.SearchPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderResponse
+import com.wutsi.checkout.manager.dto.UpdateOrderStatusRequest
 import feign.Headers
 import feign.Param
 import feign.RequestLine
@@ -57,6 +58,10 @@ public interface CheckoutManagerApi {
   @RequestLine("GET /v1/orders/{id}")
   @Headers(value=["Content-Type: application/json"])
   public fun getOrder(@Param("id") id: String): GetOrderResponse
+
+  @RequestLine("POST /v1/orders/status")
+  @Headers(value=["Content-Type: application/json"])
+  public fun updateOrderStatus(request: UpdateOrderStatusRequest): Unit
 
   @RequestLine("POST /v1/orders/search")
   @Headers(value=["Content-Type: application/json"])
