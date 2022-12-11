@@ -2,6 +2,8 @@ package com.wutsi.checkout.manager
 
 import com.wutsi.checkout.manager.dto.AddPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.AddPaymentMethodResponse
+import com.wutsi.checkout.manager.dto.CreateCashoutRequest
+import com.wutsi.checkout.manager.dto.CreateCashoutResponse
 import com.wutsi.checkout.manager.dto.CreateChargeRequest
 import com.wutsi.checkout.manager.dto.CreateChargeResponse
 import com.wutsi.checkout.manager.dto.CreateOrderRequest
@@ -16,6 +18,8 @@ import com.wutsi.checkout.manager.dto.SearchPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderResponse
+import com.wutsi.checkout.manager.dto.SearchTransactionRequest
+import com.wutsi.checkout.manager.dto.SearchTransactionResponse
 import com.wutsi.checkout.manager.dto.UpdateOrderStatusRequest
 import feign.Headers
 import feign.Param
@@ -70,6 +74,14 @@ public interface CheckoutManagerApi {
   @RequestLine("POST /v1/transactions/charge")
   @Headers(value=["Content-Type: application/json"])
   public fun createCharge(request: CreateChargeRequest): CreateChargeResponse
+
+  @RequestLine("POST /v1/transactions/cashout")
+  @Headers(value=["Content-Type: application/json"])
+  public fun createCashout(request: CreateCashoutRequest): CreateCashoutResponse
+
+  @RequestLine("POST /v1/transactions/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchTransaction(request: SearchTransactionRequest): SearchTransactionResponse
 
   @RequestLine("GET /v1/transactions/{id}?sync={sync}")
   @Headers(value=["Content-Type: application/json"])
