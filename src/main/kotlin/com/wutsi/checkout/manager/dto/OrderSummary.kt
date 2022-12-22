@@ -15,7 +15,7 @@ public data class OrderSummary(
   public val balance: Long = 0,
   public val currency: String = "",
   public val created: OffsetDateTime = OffsetDateTime.now(),
-  public val customerId: Long? = null,
+  public val customerAccountId: Long? = null,
   public val customerName: String = "",
   public val customerEmail: String = "",
   public val itemCount: Int = 0,

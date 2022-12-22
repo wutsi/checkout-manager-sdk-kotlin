@@ -28,7 +28,7 @@ public data class Order(
   public val cancellationReason: String? = null,
   public val closed: OffsetDateTime? = null,
   public val notes: String? = null,
-  public val customerId: Long? = null,
+  public val customerAccountId: Long? = null,
   public val customerName: String = "",
   public val customerEmail: String = "",
   public val items: List<OrderItem> = emptyList(),

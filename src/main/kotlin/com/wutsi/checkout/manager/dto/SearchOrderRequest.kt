@@ -8,7 +8,7 @@ import kotlin.collections.List
 
 public data class SearchOrderRequest(
   public val businessId: Long? = null,
-  public val customerId: Long? = null,
+  public val customerAccountId: Long? = null,
   public val status: List<String> = emptyList(),
   public val createdFrom: OffsetDateTime? = null,
   public val createdTo: OffsetDateTime? = null,
