@@ -18,6 +18,8 @@ import com.wutsi.checkout.manager.dto.SearchPaymentMethodRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentMethodResponse
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderRequest
 import com.wutsi.checkout.manager.dto.SearchPaymentProviderResponse
+import com.wutsi.checkout.manager.dto.SearchSalesKpiRequest
+import com.wutsi.checkout.manager.dto.SearchSalesKpiResponse
 import com.wutsi.checkout.manager.dto.SearchTransactionRequest
 import com.wutsi.checkout.manager.dto.SearchTransactionResponse
 import com.wutsi.checkout.manager.dto.UpdateOrderStatusRequest
@@ -87,4 +89,8 @@ public interface CheckoutManagerApi {
   @Headers(value=["Content-Type: application/json"])
   public fun getTransaction(@Param("id") id: String, @Param("sync") sync: Boolean? = null):
       GetTransactionResponse
+
+  @RequestLine("POST /v1/kpis/sales/search")
+  @Headers(value=["Content-Type: application/json"])
+  public fun searchSalesKpi(request: SearchSalesKpiRequest): SearchSalesKpiResponse
 }
