@@ -3,7 +3,7 @@ package com.wutsi.checkout.manager.dto
 import kotlin.Long
 import kotlin.String
 
-public data class Discount(
+public data class CreateOrderDiscountRequest(
   public val discountId: Long = 0,
   public val name: String = "",
   public val type: String = "",

@@ -13,4 +13,5 @@ public data class CreateOrderRequest(
   public val customerName: String = "",
   public val customerEmail: String = "",
   public val items: List<CreateOrderItemRequest> = emptyList(),
+  public val discounts: List<CreateOrderDiscountRequest> = emptyList(),
 )
