@@ -19,6 +19,7 @@ public data class Transaction(
   public val gatewayTransactionId: String? = null,
   public val financialTransactionId: String? = null,
   public val errorCode: String? = null,
+  public val supplierErrorMessage: String? = null,
   public val supplierErrorCode: String? = null,
   public val created: OffsetDateTime = OffsetDateTime.now(),
   public val updated: OffsetDateTime = OffsetDateTime.now(),
